@@ -7,6 +7,7 @@ require_relative 'find_products.rb'
 require_relative 'get_cash_funds.rb'
 require_relative 'get_orders.rb'
 require_relative 'get_portfolio.rb'
+require_relative 'get_position.rb'
 require_relative 'get_transactions.rb'
 
 module DeGiro
@@ -22,6 +23,7 @@ module DeGiro
     def_delegators :@get_cash_funds,     :get_cash_funds
     def_delegators :@get_orders,         :get_orders
     def_delegators :@get_portfolio,      :get_portfolio
+    def_delegators :@get_position,       :get_position
     def_delegators :@get_transactions,   :get_transactions
 
     def initialize(login:, password:)
@@ -33,6 +35,7 @@ module DeGiro
       @get_cash_funds     = GetCashFunds.new(connection)
       @get_orders         = GetOrders.new(connection)
       @get_portfolio      = GetPortfolio.new(connection)
+      @get_position       = GetPosition.new(connection)
       @get_transactions   = GetTransactions.new(connection)
     end
   end

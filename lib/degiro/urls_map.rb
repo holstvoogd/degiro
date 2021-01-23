@@ -12,6 +12,7 @@ module DeGiro
     ].freeze
 
     def initialize(data)
+      data = data['data'] if data.key?('data')
       @map = URL_NAMES.each_with_object({}) do |url_name, acc|
         raise MissingUrlError, "Could not find url '#{url_name}'" unless data.key?(url_name)
         acc[url_name.gsub(/(.)([A-Z])/, '\1_\2').downcase] = data[url_name]

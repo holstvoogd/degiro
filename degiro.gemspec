@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'faraday', '~> 0.13.1'
   spec.add_dependency 'faraday-cookie_jar', '~> 0.0.6'
+  spec.add_dependency 'monetize'
 
   spec.add_development_dependency 'rubocop', '~> 0.51.0'
 end
